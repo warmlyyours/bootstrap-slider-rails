@@ -7,7 +7,7 @@ task :update do
     base_url = 'https://raw.githubusercontent.com/seiyria/bootstrap-slider'
     puts "Downlading Bootstrap-slider #{version} ..."
     js = system("curl -fo vendor/assets/javascripts/bootstrap-slider.js " \
-                "#{base_url}/v#{version}/src/js/bootstrap-slider.js")
+                "#{base_url}/v#{version}/dist/bootstrap-slider.js")
     css = system("curl -fo vendor/assets/stylesheets/bootstrap-slider.css " \
                  "#{base_url}/v#{version}/dist/css/bootstrap-slider.css")
 
