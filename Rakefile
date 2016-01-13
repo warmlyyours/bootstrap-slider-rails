@@ -6,10 +6,14 @@ task :update do
   def download(version)
     base_url = 'https://raw.githubusercontent.com/seiyria/bootstrap-slider'
     puts "Downlading Bootstrap-slider #{version} ..."
-    `curl -o vendor/assets/javascripts/bootstrap-slider.js \
-      #{base_url}/v#{version}/js/bootstrap-slider.js`
-    `curl -o vendor/assets/stylesheets/bootstrap-slider.css \
-      #{base_url}/v#{version}/dist/css/bootstrap-slider.css`
+    js = system("curl -fo vendor/assets/javascripts/bootstrap-slider.js " \
+                "#{base_url}/v#{version}/src/js/bootstrap-slider.js")
+    css = system("curl -fo vendor/assets/stylesheets/bootstrap-slider.css " \
+                 "#{base_url}/v#{version}/dist/css/bootstrap-slider.css")
+
+    puts 'ERROR: Unable to fetch the Javascript file !' unless js
+    puts 'ERROR: Unable to fetch the CSS file !' unless css
+    exit 1 unless js || css
   end
 
   FileUtils.mkdir_p('vendor/assets/javascripts')
