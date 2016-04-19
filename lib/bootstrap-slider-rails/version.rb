@@ -1,5 +1,5 @@
 module BootstrapSlider
   module Rails
-    VERSION = '6.1.6'
+    VERSION = '6.1.8'
   end
 end
