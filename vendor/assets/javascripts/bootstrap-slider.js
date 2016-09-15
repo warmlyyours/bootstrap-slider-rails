@@ -1621,7 +1621,7 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 			(function () {
 				var autoRegisterNamespace = void 0;
 
-				if (!$.fn.slider) {
+				if (!$.fn.bootstrapSlider) {
 					$.bridget(NAMESPACE_MAIN, Slider);
 					autoRegisterNamespace = NAMESPACE_MAIN;
 				} else {
